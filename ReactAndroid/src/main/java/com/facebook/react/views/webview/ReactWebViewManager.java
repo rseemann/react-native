@@ -76,6 +76,7 @@ public class ReactWebViewManager extends SimpleViewManager<WebView> {
   public static final int COMMAND_GO_FORWARD = 2;
   public static final int COMMAND_RELOAD = 3;
   public static final int COMMAND_STOP_LOADING = 4;
+  public static final int COMMAND_EXECUTE_JAVASCRIPT = 5;
 
   // Use `webView.loadUrl("about:blank")` to reliably reset the view
   // state and release page resources (including any running JavaScript).
@@ -352,7 +353,8 @@ public class ReactWebViewManager extends SimpleViewManager<WebView> {
         "goBack", COMMAND_GO_BACK,
         "goForward", COMMAND_GO_FORWARD,
         "reload", COMMAND_RELOAD,
-        "stopLoading", COMMAND_STOP_LOADING);
+        "stopLoading", COMMAND_STOP_LOADING,
+        "executeJavaScript", COMMAND_EXECUTE_JAVASCRIPT);
   }
 
   @Override
@@ -369,6 +371,9 @@ public class ReactWebViewManager extends SimpleViewManager<WebView> {
         break;
       case COMMAND_STOP_LOADING:
         root.stopLoading();
+        break;
+      case COMMAND_EXECUTE_JAVASCRIPT:
+        root.loadUrl"javascript:(function() {\n" + args[0] + ";\n})();"
         break;
     }
   }

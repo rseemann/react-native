@@ -371,6 +371,17 @@ var WebView = React.createClass({
   },
 
   /**
+   * Runs the JS string in the webpage
+   */
+  executeJavaScript: function(JSString: String) {
+    UIManager.dispatchViewManagerCommand(
+      this.getWebViewHandle(),
+      UIManager.RCTWebView.Commands.executeJavaScript,
+      [JSString]
+    );
+  },
+
+  /**
    * We return an event with a bunch of fields including:
    *  url, title, loading, canGoBack, canGoForward
    */

@@ -41,5 +41,6 @@ shouldStartLoadForRequest:(NSMutableDictionary<NSString *, id> *)request
 - (void)goBack;
 - (void)reload;
 - (void)stopLoading;
+- (void)executeJavaScript:(NSString *)javaScript;
 
 @end
