@@ -373,7 +373,7 @@ public class ReactWebViewManager extends SimpleViewManager<WebView> {
         root.stopLoading();
         break;
       case COMMAND_EXECUTE_JAVASCRIPT:
-        root.loadUrl("javascript:(function() {\n" + args[0] + ";\n})();");
+        root.loadUrl("javascript:(function() {\n" + args.getString(0) + ";\n})();");
         break;
     }
   }
